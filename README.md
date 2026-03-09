@@ -234,7 +234,7 @@ A Postman collection is provided to test all APIs.
 Import the file:
 
 ```
-image-service-postman-collection.json
+postman_collection.json
 ```
 
 in Postman.
