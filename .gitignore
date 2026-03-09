@@ -34,8 +34,12 @@ Thumbs.db
 
 
 localstack-data/
-localstack/
+localstack/tmp/
+localstack/cache/
 
+# Allow init scripts
+!localstack/init/
+!localstack/init/**
 
 docker-compose.override.yml
 
