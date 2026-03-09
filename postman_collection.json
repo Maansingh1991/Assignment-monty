@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "c1e0a9d4-7d5e-4c10-b9b1-4d5a8b7b9a1c",
+    "name": "Image Upload Service API",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "image_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Upload Image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": ""
+            },
+            {
+              "key": "user_id",
+              "value": "12312",
+              "type": "text"
+            },
+            {
+              "key": "tag",
+              "value": "general",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/image/upload",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "image",
+            "upload"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Images",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/image/list?tag=general&limit=2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "image",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "tag",
+              "value": "general"
+            },
+            {
+              "key": "limit",
+              "value": "2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Images With Pagination",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/image/list?tag=general&limit=2&last_key={{last_key}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "image",
+            "list"
+          ],
+          "query": [
+            {
+              "key": "tag",
+              "value": "general"
+            },
+            {
+              "key": "limit",
+              "value": "2"
+            },
+            {
+              "key": "last_key",
+              "value": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Image / Download URL",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/image/{{image_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "image",
+            "{{image_id}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Image",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/image/{{image_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "image",
+            "{{image_id}}"
+          ]
+        }
+      }
+    }
+  ]
+}

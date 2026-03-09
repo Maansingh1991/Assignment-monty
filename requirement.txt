@@ -1,0 +1,8 @@
+Flask
+boto3
+pillow
+pytest
+moto
+python-dotenv
+pytest
+pytest-mock
